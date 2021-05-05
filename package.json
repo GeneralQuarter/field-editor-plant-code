@@ -1,10 +1,11 @@
 {
-  "name": "les-vallees",
+  "name": "field-editor-plant-code",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@contentful/app-sdk": "^3.34.0",
     "@contentful/field-editor-single-line": "^0.14.1",
+    "@contentful/field-editor-slug": "^0.10.1",
     "@contentful/field-editor-test-utils": "^0.11.1",
     "@contentful/forma-36-fcss": "^0.3.1",
     "@contentful/forma-36-react-components": "^3.89.0",
