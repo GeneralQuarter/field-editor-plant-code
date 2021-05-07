@@ -31,6 +31,10 @@ init(sdk => {
 
   // Select a component depending on a location in which the app is rendered.
   ComponentLocationSettings.forEach((componentLocationSetting) => {
+    if (sdk.location.is(locations.LOCATION_ENTRY_FIELD)) {
+      (sdk as FieldExtensionSDK).window.startAutoResizer();
+    }
+    
     if (sdk.location.is(componentLocationSetting.location)) {
       render(componentLocationSetting.component, root);
     }

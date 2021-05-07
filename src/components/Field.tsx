@@ -29,7 +29,7 @@ const Field = ({sdk}: FieldProps) => {
 
       const commonInfo: any = await sdk.space.getEntry(value.sys.id);
       
-      const codeStart = `${commonInfo.fields.genus.fr[0]}${commonInfo.fields.species.fr[0]}-`.toUpperCase();
+      const codeStart = `${commonInfo.fields.genus.fr.slice(0, 2)}${commonInfo.fields.species.fr.slice(0, 2)}-`.toUpperCase();
 
       const searchQuery = {
         content_type: entrySys.contentType.sys.id,
