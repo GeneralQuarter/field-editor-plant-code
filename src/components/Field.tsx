@@ -42,14 +42,16 @@ const Field = ({sdk}: FieldProps) => {
       const results = await sdk.space.getEntries(searchQuery);
 
       if (results.total === 0) {
-        field.setValue(codeStart + 1);
+        field.setValue(`${codeStart}01`);
         return;
       }
 
       const lastPlant: any = results.items[0];
       const lastNumber = parseInt(lastPlant.fields.code.fr.split('-')[1]);
+      const nextNumber = lastNumber + 1;
+      const nextNumberPadded = nextNumber < 10 ? `0${nextNumber}` : nextNumber;
 
-      field.setValue(codeStart + (lastNumber + 1));
+      field.setValue(`${codeStart}${nextNumberPadded}`);
     })
 
     return removeSubscription;
